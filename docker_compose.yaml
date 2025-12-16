@@ -5,9 +5,9 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: 22Qqwwee
-      MYSQL-DATABASE:  upendardb
-      MYSQL_USER: upendar_user
-      MYSQL_PASSWORD: upendar_pass
+      MYSQL-DATABASE:  upendar-db
+      MYSQL_USER: upendar-user
+      MYSQL_PASSWORD: upendar-pass
       MYSQL_TCP_PORT: 3306
     ports:
       - "3306:3306"
