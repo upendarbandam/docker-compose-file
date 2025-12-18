@@ -18,7 +18,7 @@ services:
   backend-container:
     container_name: backend-container
     build:
-      context: ..
+      context: ./backend-repo
       dockerfile: Dockerfile 
     ports:
       - "8080:8080"
@@ -27,6 +27,19 @@ services:
     networks:
       - my-net
     restart: on-failure 
+ 
+  frontend-container:
+    container_name: frontend-container
+    build:
+      context: ./frontend-repo
+      dockerfile: Dockerfile
+    ports:
+      -  "5000:5000"
+    depends_on:
+      -  backend-container
+    networks:
+      - my-net
+    restart: always
 
 networks:
   my-net: 
