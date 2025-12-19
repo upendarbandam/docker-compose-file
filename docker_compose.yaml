@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   mysqldb:
-    container_name: mysql-container
+    container_name: docker-compose-mysql-container
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: 22Qqwwee
@@ -16,7 +16,7 @@ services:
 
 
   backend-container:
-    container_name: backend-container
+    container_name: docker-compose-backend-container
     build:
       context: ../backend-repo
       dockerfile: Dockerfile 
@@ -29,7 +29,7 @@ services:
     restart: on-failure 
  
   frontend-container:
-    container_name: frontend-container
+    container_name: docker-compose-frontend-container
     build:
       context: ../frontend-repo
       dockerfile: Dockerfile
